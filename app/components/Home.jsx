@@ -105,38 +105,40 @@ export default class Top extends React.Component {
 
   render() {
     return (
-      <div className="window-content">
+      <div className="window">
+        <header class="toolbar toolbar-header">
+          <h1 class="title">Sample for making screenshot from movie</h1>
+          <div>
+            <button
+              id="fileSelect"
+              type="button"
+              onClick={() => this.chooseFile()}
+            >
+              Choose movie
+            </button>
+            <p>{this.state.filename}</p>
+          </div>
+        </header>
+        <div className="window-content">
         <div className="pane-group">
           <div className="pane">
-            <h4>Sample for making screenshot from movie</h4>
-            <div>
-              <button
-                id="fileSelect"
-                type="button"
-                onClick={() => this.chooseFile()}
-              >
-                Choose movie
-              </button>
-              <p>{this.state.filename}</p>
-            </div>
-            <hr />
             <h4>thumbnail</h4>
-            <div>
               <img
-                width="60%"
+                width="80%"
                 src={this.state.thumbnail}
                 alt={this.state.filename}
                 onClick={() => this.onExec(this.state.filename)}
               />
-            </div>
-            <hr />
+          </div>
+          <div className="pane">
             <h4>video tag</h4>
             <video
-              width="60%"
+              width="80%"
               src={this.state.filename}
               onClick={() => this.onExec(this.state.filename)}
             />
           </div>
+        </div>
         </div>
       </div>
     );
