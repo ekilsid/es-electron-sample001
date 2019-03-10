@@ -12,7 +12,7 @@ const baseConfig = {
                 options: {
                         presets: [
                             '@babel/preset-env',
-                            '@babel/react'
+                            '@babel/preset-react'
                         ]
                 }              
             }
